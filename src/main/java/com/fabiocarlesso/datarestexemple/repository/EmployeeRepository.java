@@ -11,6 +11,7 @@ import java.util.List;
 
 @RepositoryRestResource(path="members", excerptProjection = EmployeeView.class)
 public interface EmployeeRepository extends JpaRepository<Employee,Long> {
+    @RestResource(path = "byFirstName")
     List<Employee> findByFirstName(@Param("firstName") String firstName);
 
     @Override
